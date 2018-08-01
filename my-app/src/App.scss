@@ -3,6 +3,7 @@
   background: #F7F7F7;
 
   .navbar {
+    position: fixed;
     background-color: #2F4155;
     max-width: 300px;
     color: #C4CFDA;
@@ -42,6 +43,10 @@
     }
   }
 
+  .block {
+    left: 300px;
+  }
+
   .form-upload {
     padding: 90px;
 
@@ -58,90 +63,8 @@
 
     }
 
-    .upload-btn-wrapper {
-      position: relative;
-      overflow: hidden;
-      display: inline-block;
-      width: 100%;
-
-      .btn {
-        border-radius: 4px;
-        margin-right: 20px;
-      }
-
-      .fa {
-        font-size: 1.5rem;
-      }
-
-      input[type=file] {
-        font-size: 100px;
-        position: absolute;
-        left: 0;
-        top: 0;
-        opacity: 0;
-        z-index: 1;
-      }
-    }
-
     hr {
       border-top: 1px solid #ced4da
-    }
-  }
-
-  .image-item {
-    position: relative;
-    display: inline-block;
-    margin-bottom: 50px;
-
-    .tooltiptext {
-      visibility: hidden;
-      width: 120px;
-      background-color: #555;
-      color: #fff;
-      text-align: center;
-      border-radius: 6px;
-      padding: 5px 0;
-      position: absolute;
-      z-index: 1;
-      bottom: 105%;
-      left: 50%;
-      margin-left: -60px;
-      opacity: 0;
-      transition: opacity 0.3s;
-
-      &::after {
-        content: "";
-        position: absolute;
-        top: 100%;
-        left: 50%;
-        margin-left: -5px;
-        border-width: 5px;
-        border-style: solid;
-        border-color: #555 transparent transparent transparent;
-      }
-    }
-
-    &:hover {
-      .tooltiptext {
-        visibility: visible;
-        opacity: 1;
-      }
-    }
-
-    padding-left: 15px;
-    padding-right: 15px;
-
-    img {
-      max-width: 150px;
-    }
-
-    .close {
-      padding: 0 !important;
-      width: 20px;
-      height: 20px;
-      position: absolute;
-      right: 5px;
-      top: 5px;
     }
   }
 
@@ -157,16 +80,221 @@
       li {
         .edit {
           position: absolute;
-          right: 40px;
+          right: 20px;
           top: 20px;
           color: #fff;
           font-size: 1.5rem;
+
+          i {
+            margin-right: 15px;
+            cursor: pointer;
+          }
         }
+
       }
     }
 
     img {
       max-width: 350px;
+      cursor: pointer;
     }
+  }
+}
+
+.image-item {
+  position: relative;
+  display: inline-block;
+  margin-bottom: 50px;
+
+  .tooltiptext {
+    visibility: hidden;
+    width: 120px;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    position: absolute;
+    z-index: 1;
+    bottom: 105%;
+    left: 50%;
+    margin-left: -60px;
+    opacity: 0;
+    transition: opacity 0.3s;
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      margin-left: -5px;
+      border-width: 5px;
+      border-style: solid;
+      border-color: #555 transparent transparent transparent;
+    }
+  }
+
+  &:hover {
+    .tooltiptext {
+      visibility: visible;
+      opacity: 1;
+    }
+  }
+
+  padding-left: 15px;
+  padding-right: 15px;
+
+  img {
+    max-width: 150px;
+  }
+
+  .close {
+    padding: 0 !important;
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    right: 5px;
+    top: 5px;
+  }
+}
+
+.Modal {
+  background: white;
+  position: absolute;
+  width: 600px;
+  border-radius: 10px;
+  padding: 20px;
+  top: 30%;
+  right: 0;
+  left: 0;
+  margin: 0 auto;
+  -webkit-transform: translateY(-30%);
+  -ms-transform: translateY(-30%);
+  transform: translateY(-30%);
+
+  input {
+    border: 0;
+    border-bottom: 1px solid #ced4da;
+  }
+
+  .close-btn {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    max-width: 44px;
+    max-height: 44px;
+    width: 44px;
+    height: 44px;
+    font-size: 1.5rem;
+    font-weight: 700;
+    line-height: 1;
+    color: #000;
+    text-shadow: 0 1px 0 #fff;
+    box-shadow: 0 5px 15px 0 rgba(75, 107, 223, 0.2);
+    background-color: rgba(233, 240, 246, 0.3);
+    border-radius: 50%;
+    border: 0;
+    cursor: pointer;
+
+    img {
+      width: 20px;
+      height: 20px;
+    }
+
+    &:hover {
+      transition: 0.1s;
+      opacity: 0.7;
+    }
+  }
+
+  form {
+    img {
+      max-width: 100%;
+      max-height: 500px;
+      object-fit: cover;
+    }
+  }
+}
+
+.upload-btn-wrapper {
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+  width: 100%;
+
+  .btn {
+    border-radius: 4px;
+    margin-right: 20px;
+  }
+
+  .fa {
+    font-size: 1.5rem;
+  }
+
+  input[type=file] {
+    font-size: 100px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 0;
+    z-index: 1;
+  }
+}
+
+.modal-view {
+  .close-btn {
+    background-color: rgba(233, 240, 246, 1);
+    top: -20px;
+    right: -20px;
+    z-index: 2;
+  }
+  .image-item {
+    margin-bottom: 0;
+    padding: 0;
+  }
+}
+
+.Overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.3);
+  z-index: 2;
+}
+
+@media (min-width: 320px) and (max-width: 767px) {
+  .mobile-menu {
+    position: absolute;
+    right: 5px;
+    z-index: 2;
+    top: 5px;
+
+    button {
+      width: 40px;
+      height: 40px;
+      border: 0;
+      background-color: #2F4155;
+    }
+  }
+
+  img {
+    width: 100%;
+  }
+
+  .main {
+    .form-upload {
+      margin-top: 40px;
+      padding: 20px 10px;
+    }
+
+    .block {
+      left: 0;
+    }
+  }
+
+  .Modal {
+    width: 90%;
   }
 }
