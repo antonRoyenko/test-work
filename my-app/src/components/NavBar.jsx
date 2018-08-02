@@ -23,9 +23,9 @@ export class NavBar extends React.Component {
           </div>
         </div>
         <div className="d-block d-md-none mobile-menu">
-          <button>
-            <img src="../img/menu.svg" alt=""/>
-          </button>
+          {/*<button>*/}
+            {/*<img src="../img/menu.svg" alt=""/>*/}
+          {/*</button>*/}
         </div>
       </div>
     );

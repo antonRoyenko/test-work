@@ -2,49 +2,13 @@ import React from 'react';
 import Modal from 'react-modal';
 
 export class ModalView extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      data: null,
-    };
-  }
-
-  componentDidMount() {
-    const testImg = [
-      {
-        'id': 0,
-        'cover_image': '/img/test1.jpg',
-        'tooltip_text': 'test1'
-      },
-      {
-        'id': 1,
-        'cover_image': '/img/test2.jpg',
-        'tooltip_text': 'test2'
-      },
-      {
-        'id': 2,
-        'cover_image': '/img/test3.jpg',
-        'tooltip_text': 'test3'
-      },
-      {
-        'id': 3,
-        'cover_image': '/img/test4.jpg',
-        'tooltip_text': 'test4'
-      },
-    ]
-
-
-    this.setState({
-      data: testImg
-    });
-  }
 
   componentWillMount() {
     Modal.setAppElement('body');
   }
 
   render() {
-    let {data} = this.state;
+    let {data} = this.props;
     if(data) {
       return (
         <div>

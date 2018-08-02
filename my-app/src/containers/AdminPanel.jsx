@@ -164,7 +164,8 @@ class AdminPanel extends React.Component {
                    showModal={this.state.showModal} data={this.state.data} deleteImage={this.deleteImage}/>
           <ModalEdit showModal={this.state.showModal} idImg={this.state.idImg} handleEditImageChange={this.handleEditImageChange} handleChangeEdit={this.handleChangeEdit}
                      handleCloseModal={this.handleCloseModal} data={this.state.data} urlImg={this.state.imageEditPreviewUrl} editImage={this.editImage}/>
-          <ModalView showModal={this.state.showModalView} idImg={this.state.idImg} handleCloseModal={this.handleCloseModal}/>
+          <ModalView showModal={this.state.showModalView} idImg={this.state.idImg}
+                     handleCloseModal={this.handleCloseModal} data={this.state.data}/>
         </div>
       </div>
     );

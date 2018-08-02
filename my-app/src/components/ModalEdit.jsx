@@ -9,12 +9,6 @@ export class ModalEdit extends React.Component {
       data: null,
       value: '',
     };
-
-    this.handleChange = this.handleChange.bind(this);
-  }
-
-  handleChange(event) {
-    this.setState({value: event.target.value});
   }
 
   componentWillMount() {
